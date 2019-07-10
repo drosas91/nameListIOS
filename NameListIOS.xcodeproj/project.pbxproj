@@ -43,7 +43,9 @@
 				9F0257F722D62CAC007897FA /* NameListIOS */,
 				9F0257F622D62CAC007897FA /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		9F0257F622D62CAC007897FA /* Products */ = {
 			isa = PBXGroup;

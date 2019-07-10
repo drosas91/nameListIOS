@@ -9,40 +9,31 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+  
+  @IBOutlet weak var newTable: UITableView!
+  
+  var array = ["Name01", "Name02", "Name03", "Name04"]
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    
-    @IBOutlet weak var newTable: UITableView!
-    
-    var array = ["Name01", "Name02", "Name03", "Name04"]
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        newTable.delegate = self
-        newTable.dataSource = self
-        
-    }
-
-
+    newTable.delegate = self
+    newTable.dataSource = self
+  }
 }
 
-
-extension ViewController: UITableViewDelegate, UITableViewDataSource{
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return array.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let names = array[indexPath.row]
+    let cell = newTable.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array.count
-    }
+    cell.nameLabel.text = names
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let names = array[indexPath.row]
-        let cell = newTable.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
-    
-        cell.nameLabel.text = names
-        
-        return cell
-    }
-    
+    return cell
+  }
 }
