@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a3E-k3-3f8">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a3E-k3-3f8">
+                                <rect key="frame" x="0.0" y="88" width="414" height="665"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="mt1-BT-Z69" customClass="TableViewCell" customModule="NameListIOS" customModuleProvider="target">
@@ -30,7 +30,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rni-Za-QmD">
-                                                    <rect key="frame" x="10" y="10" width="354" height="69.5"/>
+                                                    <rect key="frame" x="10" y="10" width="394" height="69.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -67,7 +67,79 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
+            <point key="canvasLocation" x="-13" y="-588"/>
+        </scene>
+        <!--New Name-->
+        <scene sceneID="ju6-kJ-VBd">
+            <objects>
+                <viewController id="vEm-mc-Owl" customClass="NameAddViewController" customModule="NameListIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ycf-hY-cOL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresa un nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D77-zU-kbW">
+                                <rect key="frame" x="35" y="204" width="344" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="mgv-xo-C6f"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="send" textContentType="email"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vEm-mc-Owl" id="SRo-E7-DRt"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsa-7m-vqk">
+                                <rect key="frame" x="35" y="158" width="344" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoj-ky-Npt" userLabel="AddButton">
+                                <rect key="frame" x="35" y="764" width="344" height="48"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="zSs-ws-ILe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="ADD">
+                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="AddButton:" destination="vEm-mc-Owl" eventType="touchUpInside" id="GPO-xa-HmG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdY-n3-NxB">
+                                <rect key="frame" x="35" y="438" width="359" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hoj-ky-Npt" firstAttribute="leading" secondItem="GX2-T0-h4Z" secondAttribute="leading" constant="35" id="2XK-wf-Olc"/>
+                            <constraint firstItem="GX2-T0-h4Z" firstAttribute="trailing" secondItem="zsa-7m-vqk" secondAttribute="trailing" constant="35" id="8Jj-tY-JKO"/>
+                            <constraint firstItem="zsa-7m-vqk" firstAttribute="leading" secondItem="GX2-T0-h4Z" secondAttribute="leading" constant="35" id="JhY-3F-8MO"/>
+                            <constraint firstItem="D77-zU-kbW" firstAttribute="leading" secondItem="GX2-T0-h4Z" secondAttribute="leading" constant="35" id="Zq1-yN-tQQ"/>
+                            <constraint firstItem="GX2-T0-h4Z" firstAttribute="trailing" secondItem="D77-zU-kbW" secondAttribute="trailing" constant="35" id="g23-8E-frT"/>
+                            <constraint firstItem="zsa-7m-vqk" firstAttribute="top" secondItem="GX2-T0-h4Z" secondAttribute="top" constant="70" id="l8c-0x-kc9"/>
+                            <constraint firstItem="GX2-T0-h4Z" firstAttribute="trailing" secondItem="hoj-ky-Npt" secondAttribute="trailing" constant="35" id="ncW-ef-jKK"/>
+                            <constraint firstItem="GX2-T0-h4Z" firstAttribute="bottom" secondItem="hoj-ky-Npt" secondAttribute="bottom" constant="50" id="wfP-sg-ate"/>
+                            <constraint firstItem="D77-zU-kbW" firstAttribute="top" secondItem="zsa-7m-vqk" secondAttribute="bottom" constant="25" id="zIu-BS-FhF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GX2-T0-h4Z"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Name" id="LnW-dx-LGG"/>
+                    <connections>
+                        <outlet property="textField" destination="D77-zU-kbW" id="HtI-5W-h74"/>
+                        <outlet property="textFieldNameEntered" destination="wdY-n3-NxB" id="wQP-d3-oP7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TjF-w4-z3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13.043478260869566" y="138.61607142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NFg-yK-ULH">
@@ -80,12 +152,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6ij-nz-rjm"/>
+                        <segue destination="vEm-mc-Owl" kind="relationship" relationship="rootViewController" id="Jvt-v9-aQk"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jPT-aL-cwa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+            <point key="canvasLocation" x="-933" y="139"/>
         </scene>
     </scenes>
 </document>
