@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+
+class ViewController: UIViewController, MyDataSendingDelegateProtocol {
+  
   
   @IBOutlet weak var newTable: UITableView!
   
@@ -20,6 +22,19 @@ class ViewController: UIViewController {
     newTable.delegate = self
     newTable.dataSource = self
   }
+  
+  // Delegate Method
+  func sendDataToViewController(myData: String) {
+    print("Data recibida: "+myData)
+    names.append(myData)
+    newTable.reloadData()
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    let secondVC: NameAddViewController = segue.destination as! NameAddViewController
+    secondVC.delegate = self
+  }
+  
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {

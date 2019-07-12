@@ -59,7 +59,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Name List" id="Syt-4y-PhG"/>
+                    <navigationItem key="navigationItem" title="Name List" id="Syt-4y-PhG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qOH-vK-niI">
+                            <connections>
+                                <segue destination="vEm-mc-Owl" kind="show" id="kVX-dl-5pY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="newTable" destination="a3E-k3-3f8" id="3HD-lu-sKl"/>
@@ -67,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-13" y="-588"/>
+            <point key="canvasLocation" x="-19" y="139"/>
         </scene>
         <!--New Name-->
         <scene sceneID="ju6-kJ-VBd">
@@ -106,16 +112,9 @@
                                     <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="AddButton:" destination="vEm-mc-Owl" eventType="touchUpInside" id="GPO-xa-HmG"/>
+                                    <action selector="addButton:" destination="vEm-mc-Owl" eventType="touchUpInside" id="Syp-A9-i3X"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdY-n3-NxB">
-                                <rect key="frame" x="35" y="438" width="359" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -134,12 +133,11 @@
                     <navigationItem key="navigationItem" title="New Name" id="LnW-dx-LGG"/>
                     <connections>
                         <outlet property="textField" destination="D77-zU-kbW" id="HtI-5W-h74"/>
-                        <outlet property="textFieldNameEntered" destination="wdY-n3-NxB" id="wQP-d3-oP7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TjF-w4-z3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-13.043478260869566" y="138.61607142857142"/>
+            <point key="canvasLocation" x="842" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NFg-yK-ULH">
@@ -152,7 +150,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vEm-mc-Owl" kind="relationship" relationship="rootViewController" id="Jvt-v9-aQk"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sNb-h1-Ag8"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jPT-aL-cwa" userLabel="First Responder" sceneMemberID="firstResponder"/>

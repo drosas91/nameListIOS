@@ -8,49 +8,27 @@
 
 import UIKit
 
+
+protocol MyDataSendingDelegateProtocol {
+  func sendDataToViewController(myData: String)
+}
+
 class NameAddViewController: UIViewController {
   
   @IBOutlet weak var textField: UITextField!
-  @IBOutlet weak var textFieldNameEntered: UILabel!
   
+  var delegate: MyDataSendingDelegateProtocol? = nil
   var newName: String = ""
-  
-  @IBAction func AddButton(_ sender: Any) {
-    print("Inside AddButton action")
-    self.newName = textField.text!
-//    performSegue(withIdentifier: "segue_id", sender: self)
-    textFieldNameEntered.text = "Name Entered: "+self.newName
-  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
   }
   
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+  @IBAction func addButton(_ sender: Any) {
+    let newName = textField.text!
+    print("Data a enviar: "+newName)
+    self.delegate?.sendDataToViewController(myData: newName)
+    self.navigationController?.popViewController(animated: true)
   }
   
-  //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-  //  let vc = segue.destination as! ViewController
-  //  vc.receibedName = self.newName
-  //}
-  
-}
-
-extension NameAddViewController: UITextFieldDelegate {
-  
-  func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-    return true
-  }
-  
-  func textFieldDidBeginEditing(_ textField: UITextField) {
-    print("Begin editing")
-  }
-  
-  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-    
-    print(textField.text)
-    return true
-  }
 }
