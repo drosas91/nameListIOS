@@ -68,7 +68,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="newTable" destination="a3E-k3-3f8" id="3HD-lu-sKl"/>
+                        <outlet property="namesTable" destination="a3E-k3-3f8" id="3HD-lu-sKl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
